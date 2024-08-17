@@ -4,41 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Showcase</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/pelicula1.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Bienvenido a Películas Piratas</h1>
+            <h1>Películas Piratas "De la esquina"</h1>
         </div>
         <img src="../img/BobbyG(1).jpg" alt="Header Image">
     </header>
-
+    
     <main>
-        <section class="left-column">
-            <h2>Featured Movies</h2>
-            <div class="movie">
-                <h3>Movie Title 1</h3>
-                <p>Brief description of Movie 1.</p>
-            </div>
-            <div class="movie">
-                <h3>Movie Title 2</h3>
-                <p>Brief description of Movie 2.</p>
-            </div>
-            <div class="movie">
-                <h3>Movie Title 3</h3>
-                <p>Brief description of Movie 3.</p>
-            </div>
-        </section>
+        <div class="left-column">
+            <section class="movie-details">
+                <img src="../img/astartes.jpg" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h2>Movie Title</h2>
+                    <p><strong>Release Date:</strong> January 1, 2024</p>
+                    <p><strong>Director:</strong> John Doe</p>
+                    <p><strong>Cast:</strong> Jane Smith, John Doe, Alex Johnson</p>
+                    <p class="movie-description">
+                        This is a brief description of the movie, providing an overview of the plot, key themes, and any other relevant information that might entice viewers to watch it. The description can be a couple of paragraphs long.
+                    </p>
+                    <a href="trailer-link.html" class="trailer-link">Watch Trailer</a>
+                </div>
+            </section>
+        </div>
 
-        <aside class="right-column">
-            <h2>About This Website</h2>
-            <p>Information about the site or the movies featured.</p>
-        </aside>
-    </main>
+        <div class="right-column">
+            <nav class="vertical-navbar">
+                <a href="#home">Home</a>
+                <a href="#movies">Movies</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </main>   
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Alpharius Inc. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
