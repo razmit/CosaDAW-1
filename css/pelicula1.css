@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -40,49 +41,49 @@ main {
     display: flex;
     margin: 20px;
     gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .left-column {
-    flex: 8;
-}
-
-.right-column {
-    flex: 2;
-}
-
-.movie-details {
+    flex: 7;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    min-width: 250px; /* Ensure the left column doesn't get too narrow */
+}
+
+.movie-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
 }
 
 .movie-poster {
-    width: 40%; /* Limited to a smaller portion of the width */
-    height: auto;
+    width: 100%; /* Full width of the column */
+    height: 50%; /* 30% of the height of the left column */
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.movie-info {
-    max-width: 60%; /* Allowing the remaining space for movie information */
-}
-
-.movie-info h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.movie-info p {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .movie-description {
-    margin-top: 20px;
+    font-size: 1.1em;
+    margin-top: 10px;
 }
 
-.trailer-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
+.right-column {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 200px; /* Ensure the right column doesn't get too narrow */
+}
+
+.home-button {
+    display: block;
+    text-align: center;
+    padding: 15px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
@@ -90,36 +91,48 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.trailer-link:hover {
+.home-button:hover {
     background-color: #0056b3;
 }
 
-/* Vertical Navbar Styles */
-.vertical-navbar {
+.movie-link {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
-    background-color: #f0f0f0;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.vertical-navbar a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
     border-radius: 5px;
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    width: 100%;
+    text-align: center;
 }
 
-.vertical-navbar a:hover {
+.movie-link:hover {
     background-color: #ddd;
 }
 
+.small-poster {
+    width: 100%;
+    max-width: 120px; /* Constrain the maximum width */
+    height: auto;
+    border-radius: 5px;
+}
+
+.movie-link p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.movie-link a {
+    text-decoration: none;
+}
+
+.movie-description {
+    
+}
+
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 10px 0;
@@ -129,6 +142,63 @@ footer {
     bottom: 0;
 }
 
-footer p {
-    margin: 0;
+@media (max-width: 768px) {
+    header {
+        height: 25vh; /* Slightly reduce header height on smaller screens */
+    }
+
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    main {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+
+    .left-column, .right-column {
+        flex: 1; /* Make both columns equal width on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .right-column {
+        order: -1; /* Make the right column appear first */
+    }
+
+    .movie-title {
+        font-size: 2em;
+    }
+
+    .movie-poster {
+        height: auto; /* Allow the height to adjust naturally */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.5em; /* Further reduce header text size for mobile */
+    }
+
+    .movie-title {
+        font-size: 1.8em; /* Adjust movie title size */
+    }
+
+    .movie-description {
+        font-size: 1em; /* Adjust text size for mobile */
+    }
+
+    .home-button {
+        padding: 10px;
+    }
+
+    .movie-link {
+        padding: 15px;
+    }
+
+    .small-poster {
+        max-width: 100px; /* Reduce image size further for smaller screens */
+    }
+
+    footer {
+        font-size: 0.9em; /* Adjust footer text size */
+    }
 }
